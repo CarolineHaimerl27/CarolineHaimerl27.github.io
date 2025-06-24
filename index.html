@@ -80,7 +80,7 @@
       border: none;
       outline: none;
       color: #a0c4ff;
-      font-size: 1.1em;
+      font-size: 1.4em;
       width: 100%;
       text-align: left;
       border-radius: 5px;
@@ -104,6 +104,59 @@
     .content.show {
       display: block;
     }
+
+    .sub-collapsible {
+      background: none;
+      color: white;
+      font-size: 1.2em;
+      text-align: left;
+      padding: 0.5em 0;
+      border: none;
+      outline: none;
+      width: 100%;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .sub-collapsible:hover {
+      color: #ddd;
+    }
+
+    .sub-collapsible.active {
+      font-weight: bold;
+    }
+
+    .sub-collapsible::after {
+      content: " ▼";
+      float: right;
+      transition: transform 0.3s ease;
+    }
+
+    .sub-collapsible.active::after {
+      content: " ▲";
+    }
+
+    #research .content p {
+      margin: 0.1em 0;
+      font-size: 1em;
+    }
+
+    #research .content img {
+      margin: 0.2em 0;
+    }
+
+    #research .sub-collapsible {
+      margin-top: 1em;
+    }
+
+    .outreach-flex {
+      display: flex;
+      flex-direction: row;
+      gap: 1.5em;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
   </style>
 </head>
 
@@ -117,9 +170,12 @@
     </p>
     <p style="margin-top: 1em;">
       <a href="mailto:caroline.haimerl@research.fchampalimaud.org">Email</a> |
-      <a href="https://github.com/carolinehaimerl27" target="_blank">GitHub</a>
+      <a href="https://github.com/carolinehaimerl27" target="_blank">GitHub</a> |
+      <a href="https://scholar.google.com/citations?hl=en&user=oljDL7MAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Google Scholar</a> |
+      <a href="https://www.linkedin.com/in/carolinehaimerl/" target="_blank">LinkedIn</a> |
+      <a href="https://bsky.app/profile/carolinehaimerl.bsky.social" target="_blank">Bluesky</a>
     </p>
-  </section>
+  </section>  
 
   <section id="about">
     <button class="collapsible">About</button>
@@ -171,54 +227,138 @@
   <section id="research">
     <button class="collapsible">Research</button>
     <div class="content">
-      <p>Coming soon!</p>
-      <!--
-      <img src="project1.jpg" alt="Research Project 1">
-      <p>[Description of project 1]</p>
-      <img src="project2.jpg" alt="Research Project 2">
-      <p>[Description of project 2]</p>
-      -->
+  
+      <!-- Action representation -->
+      <button class="sub-collapsible">Learning efficient action representations for flexible, robust behavior</button>
+      <div class="content">
+        <p>with Joe Paton, Daniel McNamee</p>
+        <p>presented at COSYNE 2025, Janelia 2025</p>
+        <img src="compass.jpg" alt="Action representations" style="max-width: 100px; height: auto;">
+        <p>Behavior unfolds across multiple spatiotemporal scales, from fast, direct control loops to slower, abstract planning. While low-level control is rooted in concrete, egocentric state-action mappings, long-term behavioral flexibility often relies on structured representations such as “world models”. However, the origins of these internal reference frames (RFs) – especially how they emerge from interaction with the environment and support concrete actions – remain underexplored. Here, we investigate whether structured world representations can emerge from the need to generate goal-directed behavior directly from high-dimensional sensory observations.</p>
+      </div>
+      
+      <!-- Control and Learning across brain circuits -->
+      <button class="sub-collapsible">Control and Learning across brain circuits</button>
+      <div class="content">
+        <p>with Filipe S. Rodrigues, Joseph J. Paton</p>
+        <p>published in <a href="https://www.annualreviews.org/content/journals/10.1146/annurev-neuro-112723-025348" target="_blank">Annual Review of Neuroscience 2025</a></p>
+        <img src="annualrevs.png" alt="Control and Learning" style="max-width: 400px; height: auto;">
+        <p>Because organisms are able to sense its passage, it is perhaps tempting to treat time as a sensory modality, akin to vision or audition. Indeed, certain features of sensory estimation, such as Weber's law, apply to timing and sensation alike. However, from an organismal perspective, time is a derived feature of other signals, not a stimulus that can be readily transduced by sensory receptors. Its importance for biology lies in the fact that the physical world comprises a complex dynamical system. The multiscale spatiotemporal structure of sensory and internally generated signals within an organism is the informational fabric underlying its ability to control behavior. Viewed this way, temporal computations assume a more fundamental role than is implied by treating time as just another element of the experienced world. Thus, in this review we focus on temporal processing as a means of approaching the more general problem of how the nervous system produces adaptive behavior.</p>
+      </div>
+
+      <!-- Online experiential augmentations in predictive learning -->
+      <button class="sub-collapsible">Online experiential augmentations in predictive learning of world structure</button>
+      <div class="content">
+        <p>with Daniel McNamee</p>
+        <p>published in <a href="https://openreview.net/forum?id=bciFaq9EKp" target="_blank">NeurIPS Workshop 2024</a></p>
+        <p>presented at RLDM 2025</p>
+        <img src="online.png" alt="Experiential Augmentation" style="max-width: 700px; height: auto;">
+        <p>Data augmentation is a powerful tool for improving generalization in machine learning, particularly in data-sparse regimes and large models. However, its use in biological systems remains poorly understood. We propose a biologically inspired framework for experiential augmentation, where an agent autonomously transforms recent experiences into useful training examples during closed-loop interaction with dynamic environments. A simple timing mechanism—potentially linked to serotonergic signaling—regulates when to learn from augmented experiences to balance generalization, novelty adaptation, and memory preservation. In both gridworld and ProcGen CoinRun environments, augmentations triggered by internal state-prediction errors outperform random augmentations, demonstrating the benefits of timing and biological grounding. This work highlights how real-time, self-regulated augmentation can enhance online learning under uncertainty.</p>
+      </div>
+
+      <!-- Hierarchical representations for parallel learning -->
+      <button class="sub-collapsible">Hierarchical representations for parallel learning</button>
+      <div class="content">
+        <p>with Franzisco Azevedo, Joseph Paton</p>
+        <img src="hierarchy.png" alt="Hierarchical Representations" style="max-width: 700px; height: auto;">
+        <p>In this project we investigate how complex, flexible behavior is enabled by hierarchical representations and parallel learning in corticostriatal circuitry. We use reinforcement learning and control theory together with modular neural network models to explain the representations and the behavior that stems from objectives that span mutliple spatiotemporal scales. In collaboration with experimentalists in the Paton lab, we analyse neural and behavioral data to test our theory-driven models.</p>
+      </div>
+
+      <!-- Representational Drift without Synaptic Plasticity -->
+      <button class="sub-collapsible">Representational Drift without Synaptic Plasticity</button>
+      <div class="content">
+        <p>with Christian Machens</p>
+        <p>presented at COSYNE 2024, Bernstein Conference 2023</p>
+        <img src="RD.jpg" alt="Representational Drift" style="max-width: 400px; height: auto;">
+        <p>Neural computations support stable behavior despite relying on many dynamically changing biological processes. Representational drift (RD) describes changes in neurons' response profile over the timescale of minutes to weeks. Specifically, across many brain areas, neurons change their tuning or even stop/start being active, while population encoding and behavior stays intact. Generally, RD is believed to be caused by changes in synaptic weights. Weight changes impact the population readout and consequently require adaptation of downstream areas to maintain stable function, a costly and non-local problem. Here we propose that much of the observed drift phenomenon can be explained by a simpler mechanism: changes in the excitability of cells without changes in synaptic weights. Fluctuations in excitability due to intrinsic homeostatic properties or neuromodulation can occur at different timescales and change individual neuron’s response gain. Here we show that given recurrent connections, such excitability changes can also change the apparent tuning of neurons while leaving population readouts in downstream areas intact. We use spike coding networks (SCN) to show that the extent of these tuning shifts matches experimentally observed changes and that a general decoder can perform near-optimal across excitability changes. This suggests that experimentally observed decline in decoder accuracy across sessions may be due to overfitting of the decoder to one particular population configuration (i.e. the experimental session it was trained on), while downstream brain areas could maintain accurate behavior through a general decoder.</p>
+      </div>
+
+      <!-- Adapting hierarchical network through gain modulation -->
+      <button class="sub-collapsible">Adapting hierarchical network through gain modulation</button>
+      <div class="content">
+        <p>with Eero P. Simoncelli, Cristina Savin</p>
+        <p>published in <a href="https://openreview.net/forum?id=Dx4J2qZows" target="_blank">NeurIPS Workshop 2022</a></p>
+        <p>presented at <a href="https://www.world-wide.org/cosyne-22/finetuning-hierarchical-circuits-through-2cf75432/" target="_blank">COSYNE 2022</a></p>
+        <img src="gain.png" alt="Stochastic Gain Modulation" style="max-width: 300px; height: auto;">
+        <p>Here we study how the hierarchical processing of visual information can be fine-tuned to a particular task, without loss of overall, general function. We pretrain neural networks using classic gradient methods and fine-tune them to particular tasks through stochastic gain modulation. This modulation introduces a label of task-information that can be trained to highlight relevant information across several stages of processing. We then use a modulator-dependent readout gain that converts the label of task-information in a gain boost, without the need for additional learning. We show that this mechanism allows fast fine-tuning of networks.</p>
+      </div>
+
+      <!-- Decoding task-specific information across visual cortical areas -->
+      <button class="sub-collapsible">Decoding task-specific information across visual cortical areas</button>
+      <div class="content">
+        <p>with Douglas Ruff, Marlene Cohen, Cristina Savin, Eero Simoncelli</p>
+        <p>published in <a href="https://proceedings.neurips.cc/paper/2019/hash/516b38afeee70474b04881a633728b15-Abstract.html" target="_blank">NeurIPS 2019</a>, 
+          and <a href="https://www.nature.com/articles/s41467-023-43432-7" target="_blank">Nature Communications 2023</a></p>
+        <p>presented at COSYNE 2018 & 2019, Bernstein 2019 among others</p>
+        <img src="cosyne_2018.jpeg" alt="Visual Cortex Decoding" style="max-width: 400px; height: auto;">
+        <p>When scientists "decode" information from sensory cortical areas, they typically use statistical models to estimate stimulus information given neural activity. However, these methods are arguably unrealistic models for how the brain propagates information from one brain area to another. A sensory brain area consists of a vast amount of neurons with different tuning properties, so that only few of them carry information about a particular task at hand. The decoding problem consists of finding those few informative neurons among a sea of uninformative cells, and combining their activity appropriately to gain information for a task. In this project, we proposed that functionally-targeted stochastic co-modulation of primary sensory area neurons, can introduce a label of task-information that propagates from one area to another. In a collaboration with experimentalists Dr. Marlene Cohen and Dr. Douglas Ruff, we tested these theories in population recordings in brain area V1 and MT and found evidence for a task-specific information label that connects informative neurons within and across areas.</p>
+      </div>
+
+      <!-- Time and Distance: A continuous space -->
+      <button class="sub-collapsible">Time and Distance: A continuous space</button>
+      <div class="content">
+        <p>with Arnaud Malvache, Rosa Cossart</p>
+        <p>published in <a href="https://www.pnas.org/doi/10.1073/pnas.1718518116" target="_blank">PNAS 2019</a></p>
+        <p>presented at COSYNE 2017</p>
+        <img src="hpc.jpeg" alt="Time and Distance" style="max-width: 200px; height: auto;">
+        <p>The hippocampus plays a critical role in episodic memory: the sequential representation of visited places and experienced events. What are the underlying mechanisms that integrate this spatiotemporal information? Single cell activity was recently shown to combine time and distance information; however, it remains unknown whether a degree of tuning between space and time can be defined at the network level. Here, we show that hippocampal CA1 network activity tends to represent a specific combination of space and time at any given moment. Our computational model shows that this shift in tuning can happen under the control of the external drive power. We propose that extrinsic global inputs shape the nature of spatiotemporal integration in the hippocampus at the population level depending on the task at hand, a hypothesis which may guide future experimental studies.</p>
+      </div>
+
     </div>
-  </section>
+  </section>  
 
   <section id="outreach">
     <button class="collapsible">Outreach</button>
     <div class="content">
-      <img src="outreach.jpg" alt="Outreach work"
-      style="width: 200px; border-radius: 8px; box-shadow: 0 0 8px rgba(255,255,255,0.2);">
-      <p>
-        <strong>Soapbox Science</strong><br>
-        Promoting public visibility of diversity in science is fundamental. I participated in 
-        <a href="https://x.com/lisbonsoapbox?lang=en" target="_blank" rel="noopener noreferrer">Soapbox Science</a>, 
-        an organization that promotes science and diversity by connecting women and non-binary people in science to the public. 
-        I spoke about visual neuroscience at the FIC.A science festival in Oeiras, Portugal.
-      </p>
-      <p>
-        <strong>Neuromatch Academy</strong><br>
-        The <a href="https://neuromatch.io/" target="_blank" rel="noopener noreferrer">Neuromatch Academy</a> 
-        is an international, virtual platform that organizes courses for students and researchers across the globe. 
-        I participated in creating and presenting course material on Linear Dynamical Systems and the Kalman Filter. 
-        You can find the tutorial here: 
-        <a href="https://compneuro.neuromatch.io/tutorials/W3D2_HiddenDynamics/student/W3D2_Tutorial4.html#section-1-linear-dynamical-system-lds" target="_blank" rel="noopener noreferrer">
-          Neuromatch LDS Tutorial
-        </a>.
-      </p>
+      <div class="outreach-flex">
+        <img src="outreach.jpg" alt="Outreach work"
+             style="width: 200px; border-radius: 8px; box-shadow: 0 0 8px rgba(255,255,255,0.2); margin-right: 1.5em;">
+        <div>
+          <p>
+            <strong>Soapbox Science</strong><br>
+            Promoting public visibility of diversity in science is fundamental. I participated in 
+            <a href="https://x.com/lisbonsoapbox?lang=en" target="_blank" rel="noopener noreferrer">Soapbox Science</a>, 
+            an organization that promotes science and diversity by connecting women and non-binary people in science to the public. 
+            I spoke about visual neuroscience at the FIC.A science festival in Oeiras, Portugal.
+          </p>
+          <p>
+            <strong>Neuromatch Academy</strong><br>
+            The <a href="https://neuromatch.io/" target="_blank" rel="noopener noreferrer">Neuromatch Academy</a> 
+            is an international, virtual platform that organizes courses for students and researchers across the globe. 
+            I participated in creating and presenting course material on Linear Dynamical Systems and the Kalman Filter. 
+            You can find the tutorial here: 
+            <a href="https://compneuro.neuromatch.io/tutorials/W3D2_HiddenDynamics/student/W3D2_Tutorial4.html#section-1-linear-dynamical-system-lds" target="_blank" rel="noopener noreferrer">
+              Neuromatch LDS Tutorial
+            </a>.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
   
-
   <footer>
     <p>&copy; 2025 Caroline Haimerl</p>
   </footer>
 
   <script>
-    document.querySelectorAll('.collapsible').forEach(button => {
-      button.addEventListener('click', () => {
-        button.classList.toggle('active');
+    // Toggle for main collapsibles
+    document.querySelectorAll(".collapsible").forEach(button => {
+      button.addEventListener("click", () => {
+        button.classList.toggle("active");
         const content = button.nextElementSibling;
-        content.classList.toggle('show');
+        content.classList.toggle("show");
+      });
+    });
+  
+    // Toggle for sub-collapsible project buttons
+    document.querySelectorAll(".sub-collapsible").forEach(button => {
+      button.addEventListener("click", () => {
+        button.classList.toggle("active");
+        const content = button.nextElementSibling;
+        content.classList.toggle("show");
       });
     });
   </script>
+  
 </body>
 </html>
